@@ -1,0 +1,15 @@
+<h1 class= "listachar">Lista de Personajes</h1>
+
+  <div class="row row-cols-1 row-cols-md-4">
+    <div class="col mb-4" *ngFor="let item of personajes">
+        <div class="card">
+          <img src="{{item.image}}" class="card-img-top" alt="imagen de {{item.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{item.name}}</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <a href="#" class="btn btn-danger">Más sobre {{ item.name }}</a>
+          </div>
+        </div>
+      </div>
+  </div>
+  

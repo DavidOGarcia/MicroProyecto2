@@ -11,10 +11,16 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFireAuthModule} from '@angular/fire/auth';
+import { CharactersComponent } from './pages/characters/characters.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CharactersComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
