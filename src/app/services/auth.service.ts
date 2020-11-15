@@ -9,11 +9,14 @@ export class AuthService {
 
   constructor(public afAuth: AngularFireAuth) { }
 
-  loginGoogle(){
-    try {
-      return this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
-    } catch (error) {
-      console.log(error)}
+  loginWithGoogle(): Promise<void>{
+    return this.authLogin(new auth.GoogleAuthProvider()).then((response)=>{
+      console.log(response.user.displayName, response.user.email);
+    });
+  }
+
+  private authLogin(provider: auth.AuthProvider): Promise<auth.UserCredential>{
+    return this.afAuth.signInWithPopup(provider);
   }
 
 }

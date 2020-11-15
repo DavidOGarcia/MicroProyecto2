@@ -14,13 +14,19 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { DetailPageComponent } from './pages/detail-page/detail-page.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    DetailPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

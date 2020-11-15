@@ -10,22 +10,39 @@ import { ApiRequestService } from 'src/app/services/api-request.service';
 })
 export class CharactersComponent implements OnInit {
 
-  informacion: APIResponse ;
   personajes: Array<Character> = []
+  next: string = "//?page="
+  sig: boolean = false
+  contador: number = 1
 
   constructor(private apiRequest: ApiRequestService) { }
 
   ngOnInit(): void {
-    this.getCharacter();
+    this.getCharacters();
+    
+    
   }
 
-  getCharacter(): void{
+  getCharacters(): void{
     this.apiRequest.getAllCharacters().then(response=>{
       console.log('response', response);
-      this.informacion=response.data;
-      this.personajes=response.data.results
-
+      this.personajes=response.data.results;
+      
     }).catch(error=>{});
+  }
+
+  getNextPage(): void{
+    this.contador +=1
+    this.next ="//?page=" + this.contador.toString()
+    console.log('contador', this.contador)
+    console.log('next', this.next)
+  }
+
+  getPreviousPage(): void{
+    this.contador -=1
+    this.next ="//?page=" + this.contador.toString()
+    console.log('contador', this.contador)
+    console.log('next', this.next)
   }
 
 }
